@@ -26,24 +26,19 @@ namespace SnakeGameProject.Business
             next = null;
         }
 
-        public void newWave()
+        public void newWave(Directions direction)
         {
-            this.wave = new Wave(this.point.X, this.point.Y, this.diretion);
+            this.wave = new Wave(direction);
         }
-
-        public void test(Cobra cobra)
+         
+        public void transfereWave()
         {
-            if (cobra == null)
+            if(this.next != null)
             {
-                return;
+                this.next.wave = this.wave;
             }
 
-            test(cobra.next);
-
-            if(cobra.wave != null) {
-                cobra.next.wave = wave;
-                cobra.wave = null;
-            }
+            this.wave = null;
         }
 
         public void moveCobra(Cobra cobra)
@@ -53,50 +48,37 @@ namespace SnakeGameProject.Business
                 return;
             }
 
-            if(cobra.wave != null)
+            moveCobra(cobra.next);
+
+            if (cobra.wave != null)
             {
-                switch (cobra.wave.diretion)
-                {
-                    case Directions.DOWN:
-                        cobra.point = new Point(cobra.wave.point.X + 1, cobra.wave.point.Y);
-                        break;
-
-                    case Directions.UP:
-                        cobra.point = new Point(cobra.wave.point.X - 1, cobra.wave.point.Y);
-                        break;
-
-                    case Directions.LEFT:
-                        cobra.point = new Point(cobra.wave.point.X, cobra.wave.point.Y - 1);
-                        break;
-
-                    case Directions.RIGHT:
-                        cobra.point = new Point(cobra.wave.point.X, cobra.wave.point.Y + 1);
-                        break;
-                }
-
-                return;
+                cobra.diretion = cobra.wave.diretion;
+                cobra.transfereWave();
             }
 
             switch (cobra.diretion)
             {
                 case Directions.DOWN:
                     cobra.point = new Point(cobra.point.X+1, cobra.point.Y);
+                    cobra.diretion = Directions.DOWN;
                     break;
 
                 case Directions.UP:
                     cobra.point = new Point(cobra.point.X-1, cobra.point.Y);
+                    cobra.diretion = Directions.UP;
                     break;
 
                 case Directions.LEFT:
                     cobra.point = new Point(cobra.point.X, cobra.point.Y-1);
+                    cobra.diretion = Directions.LEFT;
                     break;
 
                 case Directions.RIGHT:
                     cobra.point = new Point(cobra.point.X, cobra.point.Y+1);
+                    cobra.diretion = Directions.RIGHT;
                     break;
             }
-
-            moveCobra(cobra.next);
+           
         }
 
         public Cobra newTail(Cobra cobra)

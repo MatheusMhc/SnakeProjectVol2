@@ -9,13 +9,10 @@ namespace SnakeProjectVol2.Business
 {
     internal class Wave
     {
-        public Point point { get; set; }
-
         public Directions diretion { get; set; }
 
-        public Wave(int X, int Y, Directions directions)
+        public Wave(Directions directions)
         {
-            this.point = new Point(X, Y);
             this.diretion = directions;
         }
     }
