@@ -1,0 +1,17 @@
+C:\Users\Matheus.daSilva\source\repos\SnakeProjectVol2\SnakeProjectVol2\obj\Debug\net6.0-windows\SnakeProjectVol2.csproj.AssemblyReference.cache
+C:\Users\Matheus.daSilva\source\repos\SnakeProjectVol2\SnakeProjectVol2\obj\Debug\net6.0-windows\SnakeProjectVol2.SnakeProjectVol2.resources
+C:\Users\Matheus.daSilva\source\repos\SnakeProjectVol2\SnakeProjectVol2\obj\Debug\net6.0-windows\SnakeProjectVol2.csproj.GenerateResource.cache
+C:\Users\Matheus.daSilva\source\repos\SnakeProjectVol2\SnakeProjectVol2\obj\Debug\net6.0-windows\SnakeProjectVol2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Matheus.daSilva\source\repos\SnakeProjectVol2\SnakeProjectVol2\obj\Debug\net6.0-windows\SnakeProjectVol2.AssemblyInfoInputs.cache
+C:\Users\Matheus.daSilva\source\repos\SnakeProjectVol2\SnakeProjectVol2\obj\Debug\net6.0-windows\SnakeProjectVol2.AssemblyInfo.cs
+C:\Users\Matheus.daSilva\source\repos\SnakeProjectVol2\SnakeProjectVol2\obj\Debug\net6.0-windows\SnakeProjectVol2.csproj.CoreCompileInputs.cache
+C:\Users\Matheus.daSilva\source\repos\SnakeProjectVol2\SnakeProjectVol2\bin\Debug\net6.0-windows\SnakeProjectVol2.exe
+C:\Users\Matheus.daSilva\source\repos\SnakeProjectVol2\SnakeProjectVol2\bin\Debug\net6.0-windows\SnakeProjectVol2.deps.json
+C:\Users\Matheus.daSilva\source\repos\SnakeProjectVol2\SnakeProjectVol2\bin\Debug\net6.0-windows\SnakeProjectVol2.runtimeconfig.json
+C:\Users\Matheus.daSilva\source\repos\SnakeProjectVol2\SnakeProjectVol2\bin\Debug\net6.0-windows\SnakeProjectVol2.dll
+C:\Users\Matheus.daSilva\source\repos\SnakeProjectVol2\SnakeProjectVol2\bin\Debug\net6.0-windows\SnakeProjectVol2.pdb
+C:\Users\Matheus.daSilva\source\repos\SnakeProjectVol2\SnakeProjectVol2\obj\Debug\net6.0-windows\SnakeProjectVol2.dll
+C:\Users\Matheus.daSilva\source\repos\SnakeProjectVol2\SnakeProjectVol2\obj\Debug\net6.0-windows\refint\SnakeProjectVol2.dll
+C:\Users\Matheus.daSilva\source\repos\SnakeProjectVol2\SnakeProjectVol2\obj\Debug\net6.0-windows\SnakeProjectVol2.pdb
+C:\Users\Matheus.daSilva\source\repos\SnakeProjectVol2\SnakeProjectVol2\obj\Debug\net6.0-windows\SnakeProjectVol2.genruntimeconfig.cache
+C:\Users\Matheus.daSilva\source\repos\SnakeProjectVol2\SnakeProjectVol2\obj\Debug\net6.0-windows\ref\SnakeProjectVol2.dll
