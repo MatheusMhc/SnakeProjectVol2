@@ -39,10 +39,10 @@ namespace SnakeProjectVol2
 
             cobra = temp;
 
-            cobra.moveCobra(cobra);
+            cobra.moveCobra();
             if(c  % 5 == 0)
             {
-                cobra.increaseCobra(cobra);
+                cobra.increaseCobra();
             }
             c++;
 
@@ -72,24 +72,20 @@ namespace SnakeProjectVol2
             switch (e.KeyCode)
             {
                 case Keys.Left:
-                    //cobra.diretion = Directions.LEFT;
                     cobra.newWave(Directions.LEFT);
-                    cobra.moveCobra(cobra);
+                    cobra.moveCobra();
                     break;
                 case Keys.Right:
-                    //cobra.diretion = Directions.RIGHT;
                     cobra.newWave(Directions.RIGHT);
-                    cobra.moveCobra(cobra);
+                    cobra.moveCobra();
                     break;
                 case Keys.Up:
-                    //cobra.diretion = Directions.UP;
                     cobra.newWave(Directions.UP);
-                    cobra.moveCobra(cobra);
+                    cobra.moveCobra();
                     break;
                 case Keys.Down:
-                    //cobra.diretion = Directions.DOWN;
                     cobra.newWave(Directions.DOWN);
-                    cobra.moveCobra(cobra);
+                    cobra.moveCobra();
                     break;
             }
         }

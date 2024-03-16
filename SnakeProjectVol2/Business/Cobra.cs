@@ -41,80 +41,80 @@ namespace SnakeGameProject.Business
             this.wave = null;
         }
 
-        public void moveCobra(Cobra cobra)
+        public void moveCobra()
         {
-            if (cobra == null)
+            if (this.next != null)
             {
-                return;
+                this.next.moveCobra();
             }
 
-            moveCobra(cobra.next);
-
-            if (cobra.wave != null)
+            if (this.wave != null)
             {
-                cobra.diretion = cobra.wave.diretion;
-                cobra.transfereWave();
+                this.diretion = this.wave.diretion;
+                this.transfereWave();
             }
 
-            switch (cobra.diretion)
+            switch (this.diretion)
             {
                 case Directions.DOWN:
-                    cobra.point = new Point(cobra.point.X+1, cobra.point.Y);
-                    cobra.diretion = Directions.DOWN;
+                    this.point = new Point(this.point.X + 1, this.point.Y);
+                    this.diretion = Directions.DOWN;
                     break;
 
                 case Directions.UP:
-                    cobra.point = new Point(cobra.point.X-1, cobra.point.Y);
-                    cobra.diretion = Directions.UP;
+                    this.point = new Point(this.point.X - 1, this.point.Y);
+                    this.diretion = Directions.UP;
                     break;
 
                 case Directions.LEFT:
-                    cobra.point = new Point(cobra.point.X, cobra.point.Y-1);
-                    cobra.diretion = Directions.LEFT;
+                    this.point = new Point(this.point.X, this.point.Y - 1);
+                    this.diretion = Directions.LEFT;
                     break;
 
                 case Directions.RIGHT:
-                    cobra.point = new Point(cobra.point.X, cobra.point.Y+1);
-                    cobra.diretion = Directions.RIGHT;
+                    this.point = new Point(this.point.X, this.point.Y + 1);
+                    this.diretion = Directions.RIGHT;
                     break;
             }
+            
+  
            
         }
 
-        public Cobra newTail(Cobra cobra)
+        public Cobra newTail()
         {
             Cobra tail;
-            switch (cobra.diretion)
+            switch (this.diretion)
             {
                 case Directions.DOWN:
-                    tail = new Cobra(cobra.point.X - 1, cobra.point.Y, cobra.diretion);
+                    tail = new Cobra(this.point.X - 1, this.point.Y, this.diretion);
                     break;
 
                 case Directions.UP:
-                    tail = new Cobra(cobra.point.X + 1, cobra.point.Y, cobra.diretion);
+                    tail = new Cobra(this.point.X + 1, this.point.Y, this.diretion);
                     break;
 
                 case Directions.LEFT:
-                    tail = new Cobra(cobra.point.X, cobra.point.Y + 1, cobra.diretion);
+                    tail = new Cobra(this.point.X, this.point.Y + 1, this.diretion);
                     break;
 
                 default:
-                    tail = new Cobra(cobra.point.X, cobra.point.Y-1, cobra.diretion);
+                    tail = new Cobra(this.point.X, this.point.Y-1, this.diretion);
                     break;
             }
 
             return tail;
         }
 
-        public void increaseCobra(Cobra cobra)
+        public void increaseCobra()
         {
-            if (cobra.next == null)
+            if (this.next == null)
             {
-                cobra.next = newTail(cobra);
+                this.next = this.newTail();
                 return;
             }
 
-            increaseCobra(cobra.next);
+            this.next.increaseCobra();
         }
 
     }
