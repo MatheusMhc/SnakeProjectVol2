@@ -76,9 +76,7 @@ namespace SnakeGameProject.Business
                     this.diretion = Directions.RIGHT;
                     break;
             }
-            
-  
-           
+
         }
 
         public Cobra newTail()
@@ -115,6 +113,22 @@ namespace SnakeGameProject.Business
             }
 
             this.next.increaseCobra();
+        }
+
+        public bool contains(Point point)
+        {
+            if (this.next != null)
+            {
+                this.next.contains(point);
+            }
+
+            if (this.point.X == point.X && this.point.Y == point.Y)
+            {
+                return true;
+            }
+            
+            return false;
+
         }
 
     }

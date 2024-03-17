@@ -9,35 +9,12 @@ namespace SnakeGameSpace.Business
     internal class Food
     {
         public Point point { get; set; }
-        private bool _created;
-        public bool created
+       
+
+        public Food(int maximumX, int maximumY)
         {
-            get { return _created;  }
-            set { _created = value; }
+            this.point = new Point(maximumX, maximumY);
         }
-
-        public Food()
-        {
-            this._created = false;
-        }
-
-        public void createRandomFood(int maximumX, int maximumY, Stack<Point> snake)
-        {
-            if(!created)
-            {
-                Random rn = new Random();
-                int a = rn.Next(0, maximumX);
-                int b = rn.Next(0, maximumY);
-                this.point = new Point(a, b);
-
-                if(snake.Contains(this.point))
-                {
-                    return;
-                }
-                this.created = true;
-            }
-        }
-
 
         public bool wasEaten(Stack<Point> snake)
         {

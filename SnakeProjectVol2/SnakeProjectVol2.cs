@@ -1,5 +1,6 @@
 using SnakeGameProject.Business;
 using SnakeGameSpace.Business;
+using SnakeProjectVol2.Business;
 using System.Drawing;
 
 namespace SnakeProjectVol2
@@ -11,11 +12,15 @@ namespace SnakeProjectVol2
             InitializeComponent();
         }
 
-        private Cobra cobra = new Cobra(0,0,Directions.DOWN);
+        //private Cobra cobra = new Cobra(0, 0, Directions.DOWN);
+        Game game;
+
         bool isKeyDown = false;
 
         private void SnakeProjectVol2_Load(object sender, EventArgs e)
         {
+            game = new Game(tableGridGameSkane.ColumnCount, tableGridGameSkane.RowCount);
+
             for (int i = 0; i < tableGridGameSkane.RowCount; i++)
             {
                 for (int j = 0; j < tableGridGameSkane.ColumnCount; j++)
@@ -30,23 +35,24 @@ namespace SnakeProjectVol2
         private void timer1_Tick(object sender, EventArgs e)
         {
             cleanGrid();
-            Cobra temp = cobra;
+            Cobra temp = game.cobra;
             do
             {
-                tableGridGameSkane.GetControlFromPosition(cobra.point.Y, cobra.point.X).BackColor = Color.Black;
-                cobra = cobra.next;
-            } while (cobra != null);
+                tableGridGameSkane.GetControlFromPosition(game.cobra.point.Y, game.cobra.point.X).BackColor = Color.Black;
+                game.cobra = game.cobra.next;
+            } while (game.cobra != null);
 
-            cobra = temp;
+            game.cobra = temp;
+            game.createFood();
+            tableGridGameSkane.GetControlFromPosition(game.food.point.Y, game.food.point.X).BackColor = Color.Blue;
+            game.cobra.moveCobra();
+            game.checkCobraAteFood();
+            //if (c % 5 == 0)
+            //{
+            //    game.cobra.increaseCobra();
+            //}
+            //c++;
 
-            cobra.moveCobra();
-            if(c  % 5 == 0)
-            {
-                cobra.increaseCobra();
-            }
-            c++;
-
-            //cobra.test(cobra);
         }
 
 
@@ -59,6 +65,7 @@ namespace SnakeProjectVol2
                     tableGridGameSkane.GetControlFromPosition(j, i).BackColor = new Panel().BackColor;
                 }
             }
+
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -72,20 +79,20 @@ namespace SnakeProjectVol2
             switch (e.KeyCode)
             {
                 case Keys.Left:
-                    cobra.newWave(Directions.LEFT);
-                    cobra.moveCobra();
+                    game.cobra.newWave(Directions.LEFT);
+                    game.cobra.moveCobra();
                     break;
                 case Keys.Right:
-                    cobra.newWave(Directions.RIGHT);
-                    cobra.moveCobra();
+                    game.cobra.newWave(Directions.RIGHT);
+                    game.cobra.moveCobra();
                     break;
                 case Keys.Up:
-                    cobra.newWave(Directions.UP);
-                    cobra.moveCobra();
+                    game.cobra.newWave(Directions.UP);
+                    game.cobra.moveCobra();
                     break;
                 case Keys.Down:
-                    cobra.newWave(Directions.DOWN);
-                    cobra.moveCobra();
+                    game.cobra.newWave(Directions.DOWN);
+                    game.cobra.moveCobra();
                     break;
             }
         }

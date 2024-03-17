@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mathe\\Source\\Repos\\SnakeProjectVol2\\SnakeProjectVol2\\SnakeProjectVol2.csproj": {}
+    "C:\\Users\\mathe\\source\\repos\\SnakeProjectVol2\\SnakeProjectVol2\\SnakeProjectVol2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mathe\\Source\\Repos\\SnakeProjectVol2\\SnakeProjectVol2\\SnakeProjectVol2.csproj": {
+    "C:\\Users\\mathe\\source\\repos\\SnakeProjectVol2\\SnakeProjectVol2\\SnakeProjectVol2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mathe\\Source\\Repos\\SnakeProjectVol2\\SnakeProjectVol2\\SnakeProjectVol2.csproj",
+        "projectUniqueName": "C:\\Users\\mathe\\source\\repos\\SnakeProjectVol2\\SnakeProjectVol2\\SnakeProjectVol2.csproj",
         "projectName": "SnakeProjectVol2",
-        "projectPath": "C:\\Users\\mathe\\Source\\Repos\\SnakeProjectVol2\\SnakeProjectVol2\\SnakeProjectVol2.csproj",
+        "projectPath": "C:\\Users\\mathe\\source\\repos\\SnakeProjectVol2\\SnakeProjectVol2\\SnakeProjectVol2.csproj",
         "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mathe\\Source\\Repos\\SnakeProjectVol2\\SnakeProjectVol2\\obj\\",
+        "outputPath": "C:\\Users\\mathe\\source\\repos\\SnakeProjectVol2\\SnakeProjectVol2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
