@@ -64,5 +64,17 @@ namespace SnakeProjectVol2.Business
                 createFood();
             }
         }
+
+        public void changeCobraDirection(Directions direction)
+        {
+            cobra.newWave(direction);
+        }
+
+        public void moveCobra()
+        {
+            cobra.moveCobra();
+            checkCobraAteFood();  
+        }
+
     }
 }

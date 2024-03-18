@@ -2,6 +2,7 @@
 using SnakeProjectVol2.Business;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,12 @@ namespace SnakeGameProject.Business
 {
     internal class Cobra
     {
+
+
+        private readonly int MAX_X = int.Parse(ConfigurationManager.AppSettings["maxX"]);
+
+        private readonly int MAX_Y = int.Parse(ConfigurationManager.AppSettings["maxX"]);
+
         public Point point { get; set; }
 
         public Directions diretion { get; set; }
@@ -57,22 +64,22 @@ namespace SnakeGameProject.Business
             switch (this.diretion)
             {
                 case Directions.DOWN:
-                    this.point = new Point(this.point.X + 1, this.point.Y);
+                    this.point = new Point(addX(), this.point.Y);
                     this.diretion = Directions.DOWN;
                     break;
 
                 case Directions.UP:
-                    this.point = new Point(this.point.X - 1, this.point.Y);
+                    this.point = new Point(subtractX(), this.point.Y);
                     this.diretion = Directions.UP;
                     break;
 
                 case Directions.LEFT:
-                    this.point = new Point(this.point.X, this.point.Y - 1);
+                    this.point = new Point(this.point.X, subtractY());
                     this.diretion = Directions.LEFT;
                     break;
 
                 case Directions.RIGHT:
-                    this.point = new Point(this.point.X, this.point.Y + 1);
+                    this.point = new Point(this.point.X, addY());
                     this.diretion = Directions.RIGHT;
                     break;
             }
@@ -129,6 +136,34 @@ namespace SnakeGameProject.Business
             
             return false;
 
+        }
+
+        private int addX()
+        {
+            int xval = this.point.X + 1;
+            if (xval >= MAX_X) xval = 0;
+            return xval;
+        }
+
+        private int addY()
+        {
+            int yval = this.point.Y + 1;
+            if (yval >= MAX_Y) yval = 0;
+            return yval;
+        }
+
+        private int subtractX()
+        {
+            int xval = this.point.X - 1;
+            if (xval < 0) xval = MAX_X - 1;
+            return xval;
+        }
+
+        private int subtractY()
+        {
+            int yval = this.point.Y - 1;
+            if (yval < 0) yval = MAX_Y - 1;
+            return yval;
         }
 
     }

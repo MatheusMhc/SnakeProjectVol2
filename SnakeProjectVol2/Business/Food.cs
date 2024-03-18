@@ -15,17 +15,6 @@ namespace SnakeGameSpace.Business
         {
             this.point = new Point(maximumX, maximumY);
         }
-
-        public bool wasEaten(Stack<Point> snake)
-        {
-            bool check = false;
-            foreach (var item in snake)
-            {
-                if (item.X == point.X && item.Y == point.Y) check = true; continue;
-                
-            }
-            return check;
-        }
     }
 
     

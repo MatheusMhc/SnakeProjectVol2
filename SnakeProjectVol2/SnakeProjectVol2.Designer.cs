@@ -1,4 +1,6 @@
-﻿namespace SnakeProjectVol2
+﻿using System.Windows.Forms;
+
+namespace SnakeProjectVol2
 {
     partial class SnakeProjectVol2
     {
@@ -35,6 +37,7 @@
             // 
             // tableGridGameSkane
             // 
+
             tableGridGameSkane.BackColor = SystemColors.Control;
             tableGridGameSkane.BackgroundImageLayout = ImageLayout.Center;
             tableGridGameSkane.ColumnCount = 40;
@@ -124,6 +127,7 @@
             tableGridGameSkane.RowStyles.Add(new RowStyle(SizeType.Absolute, 10F));
             tableGridGameSkane.Size = new Size(400, 400);
             tableGridGameSkane.TabIndex = 0;
+            tableGridGameSkane.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             // 
             // timer1
             // 
@@ -140,7 +144,6 @@
             Text = "Form1";
             Load += SnakeProjectVol2_Load;
             KeyDown += Form1_KeyDown;
-            KeyUp += Form1_KeyUp;
             ResumeLayout(false);
         }
 

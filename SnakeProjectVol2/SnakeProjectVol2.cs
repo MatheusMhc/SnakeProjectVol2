@@ -12,10 +12,7 @@ namespace SnakeProjectVol2
             InitializeComponent();
         }
 
-        //private Cobra cobra = new Cobra(0, 0, Directions.DOWN);
         Game game;
-
-        bool isKeyDown = false;
 
         private void SnakeProjectVol2_Load(object sender, EventArgs e)
         {
@@ -27,11 +24,12 @@ namespace SnakeProjectVol2
                 {
                     Panel panel = new Panel();
                     panel.Margin = new Padding(0);
+                    panel.BackColor = Color.LightGreen;
                     tableGridGameSkane.Controls.Add(panel, j, i);
                 }
             }
         }
-        int c = 0;
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             cleanGrid();
@@ -43,15 +41,10 @@ namespace SnakeProjectVol2
             } while (game.cobra != null);
 
             game.cobra = temp;
+
             game.createFood();
             tableGridGameSkane.GetControlFromPosition(game.food.point.Y, game.food.point.X).BackColor = Color.Blue;
-            game.cobra.moveCobra();
-            game.checkCobraAteFood();
-            //if (c % 5 == 0)
-            //{
-            //    game.cobra.increaseCobra();
-            //}
-            //c++;
+            game.moveCobra();
 
         }
 
@@ -62,7 +55,10 @@ namespace SnakeProjectVol2
             {
                 for (int j = 0; j < tableGridGameSkane.ColumnCount; j++)
                 {
-                    tableGridGameSkane.GetControlFromPosition(j, i).BackColor = new Panel().BackColor;
+                    if(tableGridGameSkane.GetControlFromPosition(j, i).BackColor != Color.LightGreen)
+                    {
+                        tableGridGameSkane.GetControlFromPosition(j, i).BackColor = Color.LightGreen;
+                    }
                 }
             }
 
@@ -70,36 +66,25 @@ namespace SnakeProjectVol2
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (isKeyDown)
-                return;
-            isKeyDown = true;
-
-            if (e.KeyCode == Keys.Control) return;
-
             switch (e.KeyCode)
             {
                 case Keys.Left:
-                    game.cobra.newWave(Directions.LEFT);
-                    game.cobra.moveCobra();
+                    game.changeCobraDirection(Directions.LEFT);
+                    game.moveCobra();
                     break;
                 case Keys.Right:
-                    game.cobra.newWave(Directions.RIGHT);
-                    game.cobra.moveCobra();
+                    game.changeCobraDirection(Directions.RIGHT);
+                    game.moveCobra();
                     break;
                 case Keys.Up:
-                    game.cobra.newWave(Directions.UP);
-                    game.cobra.moveCobra();
+                    game.changeCobraDirection(Directions.UP);
+                    game.moveCobra();
                     break;
                 case Keys.Down:
-                    game.cobra.newWave(Directions.DOWN);
-                    game.cobra.moveCobra();
+                    game.changeCobraDirection(Directions.DOWN);
+                    game.moveCobra();
                     break;
             }
-        }
-
-        private void Form1_KeyUp(object sender, KeyEventArgs e)
-        {
-            isKeyDown = false;
         }
     }
 }
