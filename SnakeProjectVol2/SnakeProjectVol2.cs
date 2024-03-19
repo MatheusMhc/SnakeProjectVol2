@@ -44,8 +44,16 @@ namespace SnakeProjectVol2
 
             game.createFood();
             tableGridGameSkane.GetControlFromPosition(game.food.point.Y, game.food.point.X).BackColor = Color.Blue;
+
             game.moveCobra();
 
+            if(game.youLose)
+            {
+                tableGridGameSkane.GetControlFromPosition(game.cobra.point.Y, game.cobra.point.X).BackColor = Color.Yellow;
+                this.timer1.Enabled = false;
+            }
+
+            
         }
 
 

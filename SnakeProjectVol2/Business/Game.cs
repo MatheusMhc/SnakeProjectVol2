@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SnakeGameProject.Business;
+﻿using SnakeGameProject.Business;
 using SnakeGameSpace.Business;
+
+using SnakeProjectVol2.Utils;
 
 namespace SnakeProjectVol2.Business
 {
@@ -18,56 +15,100 @@ namespace SnakeProjectVol2.Business
 
         public int width { get; set; }
 
-        public bool isFoodCreated { get; set; }
+        public bool youLose { get; set; }
+
         
         public Game(int height, int width) {
 
-            cobra = new Cobra(0, 0, Directions.DOWN);
+            cobra = new Cobra(39, 0, Directions.DOWN);
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            cobra.increaseCobra();
+            
+
+
             this.height = height;
             this.width = width;
+            this.youLose = false;
         }
 
         public void createFood()
         {
-
-            if (!this.isFoodCreated)
-            {
-                Random rn = new Random();
-                int X = rn.Next(0, this.height);
-                int Y = rn.Next(0, this.width);
+            if (Util.isNotNull(food)) return;
+            
+            Random rn = new Random();
+            int X = rn.Next(0, this.height);
+            int Y = rn.Next(0, this.width);
                 
-
-                if (!cobra.contains(new Point(X, Y)))
-                {
-                    this.food = new Food(X, Y);
-                    this.isFoodCreated = true;
-                    return;
-                }
-
-                this.food = null;
-                this.isFoodCreated = false;
-
+            if (!cobra.contains(new Point(X, Y)))
+            {
+                this.food = new Food(X, Y);
+                return;
             }
 
+            createFood();
         }
 
         public void checkCobraAteFood()
         {
-            if (!isFoodCreated) return;
+            if (Util.isNull(food)) return;
 
             if(cobra.contains(food.point))
             {
                 this.cobra.increaseCobra();
                 this.food = null;
-                this.isFoodCreated = false;
-
                 createFood();
             }
         }
 
+        public void checkCobraBiteItSelf()
+        {
+
+            if (Util.isNull(cobra.next)) return;
+
+            if (cobra.next.contains(cobra.point)) this.youLose = !this.youLose;
+        }
+
+
         public void changeCobraDirection(Directions direction)
         {
-            if (!cobra.containsDirection(direction)) return;                
+            if (!cobra.containsPossiblesDirection(direction)) return;                
             cobra.newWave(direction);
             moveCobra();
         }
@@ -75,7 +116,8 @@ namespace SnakeProjectVol2.Business
         public void moveCobra()
         {
             cobra.moveCobra();
-            checkCobraAteFood();  
+            checkCobraAteFood();
+            checkCobraBiteItSelf();
         }
 
     }

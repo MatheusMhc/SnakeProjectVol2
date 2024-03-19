@@ -1,18 +1,12 @@
 ﻿using SnakeGameSpace.Business;
 using SnakeProjectVol2.Business;
-using System;
-using System.Collections.Generic;
+using SnakeProjectVol2.Utils;
 using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SnakeGameProject.Business
 {
     internal class Cobra
     {
-
-
         private readonly int MAX_X = int.Parse(ConfigurationManager.AppSettings["maxX"]);
 
         private readonly int MAX_Y = int.Parse(ConfigurationManager.AppSettings["maxX"]);
@@ -122,23 +116,23 @@ namespace SnakeGameProject.Business
             this.next.increaseCobra();
         }
 
-        public bool containsDirection(Directions direction)
+        public bool containsPossiblesDirection(Directions direction)
         {
             return this.diretion.GetAttribute<ChangingDirections>().directions.ToList().Contains(direction);
         }
 
         public bool contains(Point point)
         {
-            if (this.next != null)
-            {
-                this.next.contains(point);
-            }
-
             if (this.point.X == point.X && this.point.Y == point.Y)
             {
                 return true;
             }
-            
+
+            if (this.next != null)
+            {
+                return this.next.contains(point);
+            }
+
             return false;
 
         }

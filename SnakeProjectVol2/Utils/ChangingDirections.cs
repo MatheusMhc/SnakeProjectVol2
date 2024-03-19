@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SnakeGameSpace.Business;
 
-namespace SnakeProjectVol2.Business
+namespace SnakeProjectVol2.Utils
 {
     internal class ChangingDirections : Attribute
     {
@@ -13,7 +13,7 @@ namespace SnakeProjectVol2.Business
 
         public ChangingDirections(Directions[] name)
         {
-            this.directions = name;
+            directions = name;
         }
     }
 }

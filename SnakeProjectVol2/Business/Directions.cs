@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SnakeProjectVol2.Business;
+using SnakeProjectVol2.Utils;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SnakeGameSpace.Business

@@ -5,3 +5,7 @@
 *.bin
 *.vsidx
 *.v2
+*.bin
+*.ddl
+/SnakeProjectVol2/obj/Debug/net6.0-windows/ref/SnakeProjectVol2.dll
+/SnakeProjectVol2/obj/Debug/net6.0-windows/refint/SnakeProjectVol2.dll
