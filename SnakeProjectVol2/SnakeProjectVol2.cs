@@ -1,6 +1,7 @@
 using SnakeGameProject.Business;
 using SnakeGameSpace.Business;
 using SnakeProjectVol2.Business;
+using SnakeProjectVol2.Properties;
 using System.Drawing;
 
 namespace SnakeProjectVol2
@@ -25,6 +26,7 @@ namespace SnakeProjectVol2
                     Panel panel = new Panel();
                     panel.Margin = new Padding(0);
                     panel.BackColor = Color.LightGreen;
+                    panel.BackgroundImageLayout = ImageLayout.Zoom;
                     tableGridGameSkane.Controls.Add(panel, j, i);
                 }
             }
@@ -47,13 +49,14 @@ namespace SnakeProjectVol2
 
             game.moveCobra();
 
-            if(game.youLose)
+            if (game.youLose)
             {
                 tableGridGameSkane.GetControlFromPosition(game.cobra.point.Y, game.cobra.point.X).BackColor = Color.Yellow;
+                tableGridGameSkane.GetControlFromPosition(game.cobra.point.Y, game.cobra.point.X).BackgroundImage = (Image)Properties.Resources.explosionIcon;
                 this.timer1.Enabled = false;
             }
 
-            
+
         }
 
 
@@ -63,7 +66,7 @@ namespace SnakeProjectVol2
             {
                 for (int j = 0; j < tableGridGameSkane.ColumnCount; j++)
                 {
-                    if(tableGridGameSkane.GetControlFromPosition(j, i).BackColor != Color.LightGreen)
+                    if (tableGridGameSkane.GetControlFromPosition(j, i).BackColor != Color.LightGreen)
                     {
                         tableGridGameSkane.GetControlFromPosition(j, i).BackColor = Color.LightGreen;
                     }

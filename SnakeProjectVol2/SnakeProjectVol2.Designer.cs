@@ -33,13 +33,14 @@ namespace SnakeProjectVol2
             components = new System.ComponentModel.Container();
             tableGridGameSkane = new TableLayoutPanel();
             timer1 = new System.Windows.Forms.Timer(components);
+            panel1 = new Panel();
             SuspendLayout();
             // 
             // tableGridGameSkane
             // 
-
             tableGridGameSkane.BackColor = SystemColors.Control;
             tableGridGameSkane.BackgroundImageLayout = ImageLayout.Center;
+            tableGridGameSkane.BorderStyle = BorderStyle.FixedSingle;
             tableGridGameSkane.ColumnCount = 40;
             tableGridGameSkane.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 10F));
             tableGridGameSkane.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 10F));
@@ -127,18 +128,27 @@ namespace SnakeProjectVol2
             tableGridGameSkane.RowStyles.Add(new RowStyle(SizeType.Absolute, 10F));
             tableGridGameSkane.Size = new Size(400, 400);
             tableGridGameSkane.TabIndex = 0;
-            tableGridGameSkane.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             // 
             // timer1
             // 
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
             // 
+            // panel1
+            // 
+            panel1.BackgroundImage = Properties.Resources.explosionIcon;
+            panel1.BackgroundImageLayout = ImageLayout.Zoom;
+            panel1.Location = new Point(535, 146);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(200, 100);
+            panel1.TabIndex = 1;
+            // 
             // SnakeProjectVol2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(panel1);
             Controls.Add(tableGridGameSkane);
             Name = "SnakeProjectVol2";
             Text = "Form1";
@@ -151,5 +161,6 @@ namespace SnakeProjectVol2
 
         private TableLayoutPanel tableGridGameSkane;
         private System.Windows.Forms.Timer timer1;
+        private Panel panel1;
     }
 }
