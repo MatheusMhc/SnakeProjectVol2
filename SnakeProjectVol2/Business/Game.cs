@@ -67,7 +67,9 @@ namespace SnakeProjectVol2.Business
 
         public void changeCobraDirection(Directions direction)
         {
+            if (!cobra.containsDirection(direction)) return;                
             cobra.newWave(direction);
+            moveCobra();
         }
 
         public void moveCobra()

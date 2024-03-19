@@ -122,6 +122,11 @@ namespace SnakeGameProject.Business
             this.next.increaseCobra();
         }
 
+        public bool containsDirection(Directions direction)
+        {
+            return this.diretion.GetAttribute<ChangingDirections>().directions.ToList().Contains(direction);
+        }
+
         public bool contains(Point point)
         {
             if (this.next != null)
