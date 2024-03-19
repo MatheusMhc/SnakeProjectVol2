@@ -70,19 +70,15 @@ namespace SnakeProjectVol2
             {
                 case Keys.Left:
                     game.changeCobraDirection(Directions.LEFT);
-                    game.moveCobra();
                     break;
                 case Keys.Right:
                     game.changeCobraDirection(Directions.RIGHT);
-                    game.moveCobra();
                     break;
                 case Keys.Up:
                     game.changeCobraDirection(Directions.UP);
-                    game.moveCobra();
                     break;
                 case Keys.Down:
                     game.changeCobraDirection(Directions.DOWN);
-                    game.moveCobra();
                     break;
             }
         }
