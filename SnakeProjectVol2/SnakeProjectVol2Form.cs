@@ -1,4 +1,5 @@
 using SnakeGameProject.Business;
+using SnakeGameSpace;
 using SnakeGameSpace.Business;
 using SnakeProjectVol2.Business;
 using SnakeProjectVol2.Properties;
@@ -6,19 +7,31 @@ using System.Drawing;
 
 namespace SnakeProjectVol2
 {
-    public partial class SnakeProjectVol2 : Form
+    public delegate void Notify();
+
+    public partial class SnakeProjectVol2Form : Form
     {
-        public SnakeProjectVol2()
+        Game game;
+        public event Notify loadTableComplete; 
+
+        public SnakeProjectVol2Form()
         {
             InitializeComponent();
         }
 
-        Game game;
+        public SnakeProjectVol2Form(int interval)
+        {
+            InitializeComponent();
+            timer1.Interval = interval;
+        }
 
-        private void SnakeProjectVol2_Load(object sender, EventArgs e)
+        public void SnakeProjectVol2_Load(object sender, EventArgs e)
         {
             game = new Game(tableGridGameSkane.ColumnCount, tableGridGameSkane.RowCount);
+        }
 
+        public void loadPanelOnGrid(ProgressBar bar)
+        {
             for (int i = 0; i < tableGridGameSkane.RowCount; i++)
             {
                 for (int j = 0; j < tableGridGameSkane.ColumnCount; j++)
@@ -29,7 +42,12 @@ namespace SnakeProjectVol2
                     panel.BackgroundImageLayout = ImageLayout.Zoom;
                     tableGridGameSkane.Controls.Add(panel, j, i);
                 }
+
+                bar.PerformStep();
+                
             }
+
+            loadTableComplete?.Invoke();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

@@ -1,5 +1,8 @@
 ﻿
 using NAudio.Wave;
+using SnakeProjectVol2;
+using SnakeProjectVol2.Business;
+using System.Windows.Forms;
 
 namespace SnakeGameSpace
 {
@@ -28,32 +31,32 @@ namespace SnakeGameSpace
 
         private void lblNewGame_MouseMove(object sender, MouseEventArgs e)
         {
-            lblNewGame.ForeColor = Color.Brown;
+            lblNewGame.ForeColor = Color.Gray;
         }
 
         private void lblNewGame_MouseLeave(object sender, EventArgs e)
         {
-            lblNewGame.ForeColor = Color.Black;
+            lblNewGame.ForeColor = Color.White;
         }
 
         private void lblExit_MouseMove(object sender, MouseEventArgs e)
         {
-            lblExit.ForeColor = Color.Brown;
+            lblExit.ForeColor = Color.Gray;
         }
 
         private void lblExit_MouseLeave(object sender, EventArgs e)
         {
-            lblExit.ForeColor = Color.Black;
+            lblExit.ForeColor = Color.White;
         }
 
         private void lblAbout_MouseLeave(object sender, EventArgs e)
         {
-            lblAbout.ForeColor = Color.Black;
+            lblAbout.ForeColor = Color.White;
         }
 
         private void lblAbout_MouseMove(object sender, MouseEventArgs e)
         {
-            lblAbout.ForeColor = Color.Brown;
+            lblAbout.ForeColor = Color.Gray;
         }
 
         private void lblNewGame_MouseClick(object sender, MouseEventArgs e)
@@ -64,39 +67,58 @@ namespace SnakeGameSpace
 
         private void lblEasy_MouseMove(object sender, MouseEventArgs e)
         {
-            lblEasy.ForeColor = Color.Brown;
+            lblEasy.ForeColor = Color.Gray;
         }
 
         private void lblEasy_MouseLeave(object sender, EventArgs e)
         {
-            lblEasy.ForeColor = Color.Black;
+            lblEasy.ForeColor = Color.White;
         }
 
         private void lblMedium_MouseMove(object sender, MouseEventArgs e)
         {
-            lblMedium.ForeColor = Color.Brown;
+            lblMedium.ForeColor = Color.Gray;
         }
 
         private void lblMedium_MouseLeave(object sender, EventArgs e)
         {
-            lblMedium.ForeColor = Color.Black;
+            lblMedium.ForeColor = Color.White;
         }
 
         private void lblHard_MouseMove(object sender, MouseEventArgs e)
         {
-            lblHard.ForeColor = Color.Brown;
+            lblHard.ForeColor = Color.Gray;
         }
 
         private void lblHard_MouseLeave(object sender, EventArgs e)
         {
-            lblHard.ForeColor = Color.Black;
+            lblHard.ForeColor = Color.White;
         }
 
         private void newGame(int interval)
         {
-            soundPlayer.Dispose();
-            var gameScreen = new SnakeProjectVol2.SnakeProjectVol2();
+            //var gameScreen = new SnakeProjectVol2.SnakeProjectVol2Form(this, interval);
+            //gameScreen.Show();
+
+
+            var gameScreen = new SnakeProjectVol2.SnakeProjectVol2Form(interval);
+
+            this.loadingProgress.Visible = true;
+            gameScreen.loadTableComplete += () => openNewForm(gameScreen) ;
+            gameScreen.loadPanelOnGrid(this.loadingProgress);
+            gameScreen.Closed += (s, arg) => this.Close();
+
+        }
+        public void openNewForm(SnakeProjectVol2Form gameScreen)
+        {
+            this.Hide();
             gameScreen.Show();
+
+        }
+
+        private void Form2_Shown(object? sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void lblHard_Click(object sender, EventArgs e)
@@ -119,12 +141,12 @@ namespace SnakeGameSpace
 
         private void lblBack_MouseLeave(object sender, EventArgs e)
         {
-            lblBack.ForeColor = Color.Black;
+            lblBack.ForeColor = Color.White;
         }
 
         private void lblBack_MouseMove(object sender, MouseEventArgs e)
         {
-            lblBack.ForeColor = Color.Brown;
+            lblBack.ForeColor = Color.Gray;
         }
 
         private void lblBack_Click(object sender, EventArgs e)

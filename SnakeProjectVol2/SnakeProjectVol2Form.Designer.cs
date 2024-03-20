@@ -2,7 +2,7 @@
 
 namespace SnakeProjectVol2
 {
-    partial class SnakeProjectVol2
+    partial class SnakeProjectVol2Form
     {
         /// <summary>
         ///  Required designer variable.

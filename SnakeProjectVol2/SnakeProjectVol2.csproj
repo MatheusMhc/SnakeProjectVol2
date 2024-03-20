@@ -9,10 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="bin\Debug\net6.0-windows\fruit.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="bin\Debug\net6.0-windows\explosionIcon.png" />
   </ItemGroup>
 

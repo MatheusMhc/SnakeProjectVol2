@@ -55,12 +55,12 @@
             // lblExit
             // 
             lblExit.AutoSize = true;
-            lblExit.BackColor = SystemColors.ActiveBorder;
-            lblExit.Font = new Font("Snap ITC", 26F, FontStyle.Regular, GraphicsUnit.Point);
+            lblExit.BackColor = Color.Transparent;
+            lblExit.Font = new Font("Bodoni MT", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblExit.ForeColor = Color.White;
             lblExit.Location = new Point(260, 321);
             lblExit.Name = "lblExit";
-            lblExit.Size = new Size(112, 45);
+            lblExit.Size = new Size(84, 41);
             lblExit.TabIndex = 4;
             lblExit.Text = "Exit";
             lblExit.Click += lblExit_Click;
@@ -70,12 +70,12 @@
             // lblAbout
             // 
             lblAbout.AutoSize = true;
-            lblAbout.BackColor = SystemColors.ActiveBorder;
-            lblAbout.Font = new Font("Snap ITC", 26F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAbout.BackColor = Color.Transparent;
+            lblAbout.Font = new Font("Bodoni MT", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblAbout.ForeColor = Color.White;
             lblAbout.Location = new Point(245, 262);
             lblAbout.Name = "lblAbout";
-            lblAbout.Size = new Size(137, 45);
+            lblAbout.Size = new Size(111, 41);
             lblAbout.TabIndex = 5;
             lblAbout.Text = "About";
             lblAbout.Click += lblAbout_Click;
@@ -85,12 +85,12 @@
             // lblNewGame
             // 
             lblNewGame.AutoSize = true;
-            lblNewGame.BackColor = SystemColors.ActiveBorder;
-            lblNewGame.Font = new Font("Snap ITC", 26F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNewGame.BackColor = Color.Transparent;
+            lblNewGame.Font = new Font("Bodoni MT", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblNewGame.ForeColor = Color.White;
             lblNewGame.Location = new Point(209, 207);
             lblNewGame.Name = "lblNewGame";
-            lblNewGame.Size = new Size(228, 45);
+            lblNewGame.Size = new Size(179, 41);
             lblNewGame.TabIndex = 6;
             lblNewGame.Text = "New Game";
             lblNewGame.MouseClick += lblNewGame_MouseClick;
@@ -100,12 +100,12 @@
             // lblEasy
             // 
             lblEasy.AutoSize = true;
-            lblEasy.BackColor = SystemColors.AppWorkspace;
-            lblEasy.Font = new Font("Snap ITC", 26F, FontStyle.Regular, GraphicsUnit.Point);
+            lblEasy.BackColor = Color.Transparent;
+            lblEasy.Font = new Font("Bodoni MT", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblEasy.ForeColor = Color.White;
             lblEasy.Location = new Point(256, 198);
             lblEasy.Name = "lblEasy";
-            lblEasy.Size = new Size(114, 45);
+            lblEasy.Size = new Size(91, 41);
             lblEasy.TabIndex = 7;
             lblEasy.Text = "Easy";
             lblEasy.Click += lblEasy_Click;
@@ -115,12 +115,12 @@
             // lblMedium
             // 
             lblMedium.AutoSize = true;
-            lblMedium.BackColor = SystemColors.ActiveBorder;
-            lblMedium.Font = new Font("Snap ITC", 26F, FontStyle.Regular, GraphicsUnit.Point);
+            lblMedium.BackColor = Color.Transparent;
+            lblMedium.Font = new Font("Bodoni MT", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblMedium.ForeColor = Color.White;
             lblMedium.Location = new Point(232, 281);
             lblMedium.Name = "lblMedium";
-            lblMedium.Size = new Size(170, 45);
+            lblMedium.Size = new Size(139, 41);
             lblMedium.TabIndex = 8;
             lblMedium.Text = "Medium";
             lblMedium.Click += lblMedium_Click;
@@ -130,12 +130,12 @@
             // lblHard
             // 
             lblHard.AutoSize = true;
-            lblHard.BackColor = SystemColors.ActiveBorder;
-            lblHard.Font = new Font("Snap ITC", 26F, FontStyle.Regular, GraphicsUnit.Point);
+            lblHard.BackColor = Color.Transparent;
+            lblHard.Font = new Font("Bodoni MT", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblHard.ForeColor = Color.White;
             lblHard.Location = new Point(260, 366);
             lblHard.Name = "lblHard";
-            lblHard.Size = new Size(116, 45);
+            lblHard.Size = new Size(95, 41);
             lblHard.TabIndex = 9;
             lblHard.Text = "Hard";
             lblHard.Click += lblHard_Click;
@@ -144,8 +144,8 @@
             // 
             // loadingProgress
             // 
-            loadingProgress.ForeColor = SystemColors.MenuHighlight;
-            loadingProgress.Location = new Point(142, 462);
+            loadingProgress.ForeColor = Color.Green;
+            loadingProgress.Location = new Point(134, 420);
             loadingProgress.Maximum = 400;
             loadingProgress.Name = "loadingProgress";
             loadingProgress.Size = new Size(365, 23);
@@ -154,6 +154,7 @@
             // lblBack
             // 
             lblBack.AutoSize = true;
+            lblBack.BackColor = Color.Transparent;
             lblBack.Font = new Font("Snap ITC", 26F, FontStyle.Regular, GraphicsUnit.Point);
             lblBack.Location = new Point(655, 393);
             lblBack.Name = "lblBack";
