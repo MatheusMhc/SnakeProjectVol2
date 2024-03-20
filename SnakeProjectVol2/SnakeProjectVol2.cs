@@ -69,6 +69,7 @@ namespace SnakeProjectVol2
                     if (tableGridGameSkane.GetControlFromPosition(j, i).BackColor != Color.LightGreen)
                     {
                         tableGridGameSkane.GetControlFromPosition(j, i).BackColor = Color.LightGreen;
+                        tableGridGameSkane.GetControlFromPosition(j, i).BackgroundImage = null;
                     }
                 }
             }

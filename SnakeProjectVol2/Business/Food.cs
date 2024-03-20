@@ -9,7 +9,7 @@ namespace SnakeGameSpace.Business
     internal class Food
     {
         public Point point { get; set; }
-       
+        
 
         public Food(int maximumX, int maximumY)
         {

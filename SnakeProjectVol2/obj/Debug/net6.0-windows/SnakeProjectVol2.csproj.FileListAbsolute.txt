@@ -33,3 +33,15 @@ C:\Users\mathe\Source\Repos\SnakeProjectVol2\SnakeProjectVol2\obj\Debug\net6.0-w
 C:\Users\mathe\Source\Repos\SnakeProjectVol2\SnakeProjectVol2\obj\Debug\net6.0-windows\ref\SnakeProjectVol2.dll
 C:\Users\Matheus.daSilva\source\repos\SnakeProjectVol2\SnakeProjectVol2\bin\Debug\net6.0-windows\SnakeProjectVol2.dll.config
 C:\Users\Matheus.daSilva\source\repos\SnakeProjectVol2\SnakeProjectVol2\obj\Debug\net6.0-windows\SnakeProjectVol2.Properties.Resources.resources
+C:\Users\mathe\source\repos\SnakeProjectVol2\SnakeProjectVol2\bin\Debug\net6.0-windows\SnakeProjectVol2.dll.config
+C:\Users\mathe\source\repos\SnakeProjectVol2\SnakeProjectVol2\obj\Debug\net6.0-windows\SnakeProjectVol2.Properties.Resources.resources
+C:\Users\mathe\source\repos\SnakeProjectVol2\SnakeProjectVol2\obj\Debug\net6.0-windows\SnakeProjectVol2.csproj.AssemblyReference.cache
+C:\Users\mathe\source\repos\SnakeProjectVol2\SnakeProjectVol2\obj\Debug\net6.0-windows\SnakeGameSpace.Menu.resources
+C:\Users\mathe\source\repos\SnakeProjectVol2\SnakeProjectVol2\bin\Debug\net6.0-windows\NAudio.dll
+C:\Users\mathe\source\repos\SnakeProjectVol2\SnakeProjectVol2\bin\Debug\net6.0-windows\NAudio.Asio.dll
+C:\Users\mathe\source\repos\SnakeProjectVol2\SnakeProjectVol2\bin\Debug\net6.0-windows\NAudio.Core.dll
+C:\Users\mathe\source\repos\SnakeProjectVol2\SnakeProjectVol2\bin\Debug\net6.0-windows\NAudio.Midi.dll
+C:\Users\mathe\source\repos\SnakeProjectVol2\SnakeProjectVol2\bin\Debug\net6.0-windows\NAudio.Wasapi.dll
+C:\Users\mathe\source\repos\SnakeProjectVol2\SnakeProjectVol2\bin\Debug\net6.0-windows\NAudio.WinForms.dll
+C:\Users\mathe\source\repos\SnakeProjectVol2\SnakeProjectVol2\bin\Debug\net6.0-windows\NAudio.WinMM.dll
+C:\Users\mathe\source\repos\SnakeProjectVol2\SnakeProjectVol2\obj\Debug\net6.0-windows\SnakeProjectVol2.csproj.CopyComplete
