@@ -87,5 +87,15 @@ namespace SnakeProjectVol2.Properties {
                 return ResourceManager.GetStream("residentcobra", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap you_are_dead_game_over {
+            get {
+                object obj = ResourceManager.GetObject("you_are_dead_game_over", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

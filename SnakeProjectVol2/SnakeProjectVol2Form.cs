@@ -5,6 +5,7 @@ using SnakeProjectVol2.Business;
 using SnakeProjectVol2.Properties;
 using System.Drawing;
 using System.Media;
+using System.Resources;
 
 namespace SnakeProjectVol2
 {
@@ -25,6 +26,8 @@ namespace SnakeProjectVol2
         {
             InitializeComponent();
             timer1.Interval = interval;
+            this.loadingProgress.Visible = false;
+            this.picBoxYouDied.Visible = false;
         }
 
         public void SnakeProjectVol2_Load(object sender, EventArgs e)
@@ -74,11 +77,11 @@ namespace SnakeProjectVol2
                 tableGridGameSkane.GetControlFromPosition(game.cobra.point.Y, game.cobra.point.X).BackgroundImage = (Image)Properties.Resources.explosionIcon;
                 this.timer1.Enabled = false;
                 this.grpBoxScore.Visible = false;
+                this.picBoxYouDied.Visible = true;
                 this.lblDoYouContinue.Visible = true;
                 this.lblYes.Visible = true;
                 this.lblNo.Visible = true;
             }
-
 
         }
 
@@ -121,13 +124,18 @@ namespace SnakeProjectVol2
         private void lblYes_Click(object sender, EventArgs e)
         {
             soundPlayer.Dispose();
-         }
+            this.loadingProgress.Visible = true;
+            var gameScreen = new SnakeProjectVol2Form(timer1.Interval);
+            gameScreen.loadTableComplete += () => openNewForm(gameScreen);
+            gameScreen.loadPanelOnGrid(this.loadingProgress);
+            gameScreen.Closed += (s, arg) => this.Close();
+        }
 
         private void lblNo_Click(object sender, EventArgs e)
         {
             var menu = new Menu();
-            this.Dispose();
             menu.Show();
+            this.Hide();
         }
     }
 }
