@@ -2,6 +2,7 @@
 using SnakeGameSpace.Business;
 
 using SnakeProjectVol2.Utils;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace SnakeProjectVol2.Business
 {
@@ -17,7 +18,7 @@ namespace SnakeProjectVol2.Business
 
         public bool youLose { get; set; }
 
-        
+        public int score { get; set; }
         public Game(int height, int width) {
 
             cobra = new Cobra(39, 0, Directions.DOWN);
@@ -66,6 +67,7 @@ namespace SnakeProjectVol2.Business
             this.height = height;
             this.width = width;
             this.youLose = false;
+            this.score = 0;
         }
 
         public void createFood()
@@ -93,6 +95,7 @@ namespace SnakeProjectVol2.Business
             {
                 this.cobra.increaseCobra();
                 this.food = null;
+                this.score++;
                 createFood();
             }
         }

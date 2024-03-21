@@ -14,7 +14,6 @@ namespace SnakeGameSpace
         public Menu()
         {
             InitializeComponent();
-            //selectSoundGame("../../../resources/menusound.wav");
             lblEasy.Visible = false;
             lblMedium.Visible = false;
             lblHard.Visible = false;
@@ -61,7 +60,7 @@ namespace SnakeGameSpace
 
         private void lblNewGame_MouseClick(object sender, MouseEventArgs e)
         {
-            //selectSoundGame("../../../resources/game-start-6104.wav");
+            selectSoundGame("../../../resources/option.wav");
             enableDisableLabels(false);
         }
 
@@ -97,11 +96,8 @@ namespace SnakeGameSpace
 
         private void newGame(int interval)
         {
-            //var gameScreen = new SnakeProjectVol2.SnakeProjectVol2Form(this, interval);
-            //gameScreen.Show();
-
-
-            var gameScreen = new SnakeProjectVol2.SnakeProjectVol2Form(interval);
+            selectSoundGame("../../../resources/residentcobra.wav");
+            var gameScreen = new SnakeProjectVol2Form(interval);
 
             this.loadingProgress.Visible = true;
             gameScreen.loadTableComplete += () => openNewForm(gameScreen) ;
@@ -123,19 +119,19 @@ namespace SnakeGameSpace
 
         private void lblHard_Click(object sender, EventArgs e)
         {
-            //selectSoundGame("../../../resources/game-start-6104.wav");
+            selectSoundGame("../../../resources/option.wav");
             newGame(50);
         }
 
         private void lblMedium_Click(object sender, EventArgs e)
         {
-            //selectSoundGame("../../../resources/game-start-6104.wav");
+            selectSoundGame("../../../resources/option.wav");
             newGame(150);
         }
 
         private void lblEasy_Click(object sender, EventArgs e)
         {
-            //selectSoundGame("../../../resources/game-start-6104.wav");
+            selectSoundGame("../../../resources/option.wav");
             newGame(250);
         }
 
@@ -151,7 +147,7 @@ namespace SnakeGameSpace
 
         private void lblBack_Click(object sender, EventArgs e)
         {
-            //selectSoundGame("../../../resources/game-start-6104.wav");
+            selectSoundGame("../../../resources/option.wav");
             enableDisableLabels(true);
         }
 
@@ -178,7 +174,7 @@ namespace SnakeGameSpace
 
         private void lblAbout_Click(object sender, EventArgs e)
         {
-            //selectSoundGame("../../../resources/game-start-6104.wav");
+            selectSoundGame("../../../resources/option.wav");
             enableFirsScreenLabels(false);
             lblBack.Visible = true;
         }

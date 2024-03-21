@@ -31,8 +31,19 @@ namespace SnakeProjectVol2
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SnakeProjectVol2Form));
             tableGridGameSkane = new TableLayoutPanel();
             timer1 = new System.Windows.Forms.Timer(components);
+            grpBoxScore = new GroupBox();
+            label1 = new Label();
+            picBoxDirectionals = new PictureBox();
+            lblScoreValue = new Label();
+            lblScoreName = new Label();
+            lblNo = new Label();
+            lblYes = new Label();
+            lblDoYouContinue = new Label();
+            grpBoxScore.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picBoxDirectionals).BeginInit();
             SuspendLayout();
             // 
             // tableGridGameSkane
@@ -133,22 +144,133 @@ namespace SnakeProjectVol2
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
             // 
-            // SnakeProjectVol2
+            // grpBoxScore
+            // 
+            grpBoxScore.BackColor = Color.Red;
+            grpBoxScore.Controls.Add(label1);
+            grpBoxScore.Controls.Add(picBoxDirectionals);
+            grpBoxScore.Controls.Add(lblScoreValue);
+            grpBoxScore.Controls.Add(lblScoreName);
+            grpBoxScore.Font = new Font("Bodoni MT", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            grpBoxScore.Location = new Point(451, 12);
+            grpBoxScore.Name = "grpBoxScore";
+            grpBoxScore.Size = new Size(319, 218);
+            grpBoxScore.TabIndex = 3;
+            grpBoxScore.TabStop = false;
+            grpBoxScore.Text = "Resident Cobra 2";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(6, 153);
+            label1.Name = "label1";
+            label1.Size = new Size(62, 32);
+            label1.TabIndex = 3;
+            label1.Text = "Use:";
+            // 
+            // picBoxDirectionals
+            // 
+            picBoxDirectionals.Image = (Image)resources.GetObject("picBoxDirectionals.Image");
+            picBoxDirectionals.Location = new Point(102, 106);
+            picBoxDirectionals.Name = "picBoxDirectionals";
+            picBoxDirectionals.Size = new Size(180, 106);
+            picBoxDirectionals.SizeMode = PictureBoxSizeMode.StretchImage;
+            picBoxDirectionals.TabIndex = 2;
+            picBoxDirectionals.TabStop = false;
+            // 
+            // lblScoreValue
+            // 
+            lblScoreValue.AutoSize = true;
+            lblScoreValue.ForeColor = Color.White;
+            lblScoreValue.Location = new Point(103, 48);
+            lblScoreValue.Name = "lblScoreValue";
+            lblScoreValue.Size = new Size(27, 32);
+            lblScoreValue.TabIndex = 1;
+            lblScoreValue.Text = "0";
+            // 
+            // lblScoreName
+            // 
+            lblScoreName.AutoSize = true;
+            lblScoreName.Location = new Point(16, 48);
+            lblScoreName.Name = "lblScoreName";
+            lblScoreName.Size = new Size(81, 32);
+            lblScoreName.TabIndex = 0;
+            lblScoreName.Text = "Score:";
+            // 
+            // lblNo
+            // 
+            lblNo.AutoSize = true;
+            lblNo.BackColor = Color.Black;
+            lblNo.Font = new Font("Bodoni MT", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNo.ForeColor = Color.White;
+            lblNo.Location = new Point(674, 333);
+            lblNo.Name = "lblNo";
+            lblNo.Size = new Size(44, 32);
+            lblNo.TabIndex = 9;
+            lblNo.Text = "No";
+            lblNo.Visible = false;
+            lblNo.Click += lblNo_Click;
+            // 
+            // lblYes
+            // 
+            lblYes.AutoSize = true;
+            lblYes.BackColor = Color.Black;
+            lblYes.Font = new Font("Bodoni MT", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblYes.ForeColor = Color.White;
+            lblYes.Location = new Point(463, 333);
+            lblYes.Name = "lblYes";
+            lblYes.Size = new Size(53, 32);
+            lblYes.TabIndex = 8;
+            lblYes.Text = "Yes";
+            lblYes.Visible = false;
+            lblYes.Click += lblYes_Click;
+            // 
+            // lblDoYouContinue
+            // 
+            lblDoYouContinue.AutoSize = true;
+            lblDoYouContinue.BackColor = Color.Black;
+            lblDoYouContinue.Font = new Font("Bodoni MT", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDoYouContinue.ForeColor = Color.White;
+            lblDoYouContinue.Location = new Point(445, 261);
+            lblDoYouContinue.Name = "lblDoYouContinue";
+            lblDoYouContinue.Size = new Size(336, 32);
+            lblDoYouContinue.TabIndex = 7;
+            lblDoYouContinue.Text = "Do You Want To Try Again?";
+            lblDoYouContinue.Visible = false;
+            // 
+            // SnakeProjectVol2Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = SystemColors.ActiveCaptionText;
+            ClientSize = new Size(795, 441);
+            Controls.Add(lblNo);
+            Controls.Add(lblYes);
+            Controls.Add(lblDoYouContinue);
+            Controls.Add(grpBoxScore);
             Controls.Add(tableGridGameSkane);
-            Name = "SnakeProjectVol2";
+            Name = "SnakeProjectVol2Form";
             Text = "Form1";
             Load += SnakeProjectVol2_Load;
             KeyDown += Form1_KeyDown;
+            grpBoxScore.ResumeLayout(false);
+            grpBoxScore.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picBoxDirectionals).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private TableLayoutPanel tableGridGameSkane;
         private System.Windows.Forms.Timer timer1;
+        private GroupBox grpBoxScore;
+        private Label label1;
+        private PictureBox picBoxDirectionals;
+        private Label lblScoreValue;
+        private Label lblScoreName;
+        private Label lblNo;
+        private Label lblYes;
+        private Label lblDoYouContinue;
     }
 }

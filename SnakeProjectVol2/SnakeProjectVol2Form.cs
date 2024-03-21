@@ -4,15 +4,17 @@ using SnakeGameSpace.Business;
 using SnakeProjectVol2.Business;
 using SnakeProjectVol2.Properties;
 using System.Drawing;
+using System.Media;
 
 namespace SnakeProjectVol2
 {
     public delegate void Notify();
 
-    public partial class SnakeProjectVol2Form : Form
+    public partial class SnakeProjectVol2Form : Test
     {
+        public event Notify loadTableComplete;
+
         Game game;
-        public event Notify loadTableComplete; 
 
         public SnakeProjectVol2Form()
         {
@@ -44,7 +46,6 @@ namespace SnakeProjectVol2
                 }
 
                 bar.PerformStep();
-                
             }
 
             loadTableComplete?.Invoke();
@@ -64,7 +65,7 @@ namespace SnakeProjectVol2
 
             game.createFood();
             tableGridGameSkane.GetControlFromPosition(game.food.point.Y, game.food.point.X).BackColor = Color.Blue;
-
+            lblScoreValue.Text = game.score.ToString();
             game.moveCobra();
 
             if (game.youLose)
@@ -72,6 +73,10 @@ namespace SnakeProjectVol2
                 tableGridGameSkane.GetControlFromPosition(game.cobra.point.Y, game.cobra.point.X).BackColor = Color.Yellow;
                 tableGridGameSkane.GetControlFromPosition(game.cobra.point.Y, game.cobra.point.X).BackgroundImage = (Image)Properties.Resources.explosionIcon;
                 this.timer1.Enabled = false;
+                this.grpBoxScore.Visible = false;
+                this.lblDoYouContinue.Visible = true;
+                this.lblYes.Visible = true;
+                this.lblNo.Visible = true;
             }
 
 
@@ -111,6 +116,18 @@ namespace SnakeProjectVol2
                     game.changeCobraDirection(Directions.DOWN);
                     break;
             }
+        }
+
+        private void lblYes_Click(object sender, EventArgs e)
+        {
+            soundPlayer.Dispose();
+         }
+
+        private void lblNo_Click(object sender, EventArgs e)
+        {
+            var menu = new Menu();
+            this.Dispose();
+            menu.Show();
         }
     }
 }

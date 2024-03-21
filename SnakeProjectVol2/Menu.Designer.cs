@@ -155,8 +155,9 @@
             // 
             lblBack.AutoSize = true;
             lblBack.BackColor = Color.Transparent;
-            lblBack.Font = new Font("Snap ITC", 26F, FontStyle.Regular, GraphicsUnit.Point);
-            lblBack.Location = new Point(655, 393);
+            lblBack.ForeColor = Color.White;
+            lblBack.Font = new Font("Bodoni MT", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblBack.Location = new Point(530, 426);
             lblBack.Name = "lblBack";
             lblBack.Size = new Size(112, 45);
             lblBack.TabIndex = 11;

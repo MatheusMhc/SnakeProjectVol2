@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="SnakeProjectVol2Form.resx~RF79de2c6.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="bin\Debug\net6.0-windows\explosionIcon.png" />
   </ItemGroup>
 

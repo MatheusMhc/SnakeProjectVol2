@@ -69,5 +69,23 @@ namespace SnakeProjectVol2.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream option {
+            get {
+                return ResourceManager.GetStream("option", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream residentcobra {
+            get {
+                return ResourceManager.GetStream("residentcobra", resourceCulture);
+            }
+        }
     }
 }
