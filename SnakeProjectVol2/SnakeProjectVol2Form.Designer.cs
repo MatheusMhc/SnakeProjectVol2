@@ -264,13 +264,13 @@ namespace SnakeProjectVol2
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(795, 441);
-            Controls.Add(picBoxYouDead);
             Controls.Add(loadingProgress);
             Controls.Add(lblNo);
             Controls.Add(lblYes);
             Controls.Add(lblDoYouContinue);
             Controls.Add(grpBoxScore);
             Controls.Add(tableGridGameSkane);
+            Controls.Add(picBoxYouDead);
             Name = "SnakeProjectVol2Form";
             Text = "Form1";
             Load += SnakeProjectVol2_Load;

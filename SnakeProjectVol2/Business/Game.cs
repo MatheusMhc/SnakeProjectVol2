@@ -27,42 +27,6 @@ namespace SnakeProjectVol2.Business
             cobra.increaseCobra();
             cobra.increaseCobra();
             cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            cobra.increaseCobra();
-            
-
 
             this.height = height;
             this.width = width;

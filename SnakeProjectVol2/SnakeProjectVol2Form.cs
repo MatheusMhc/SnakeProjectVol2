@@ -57,11 +57,22 @@ namespace SnakeProjectVol2
         {
             cleanGrid();
             Cobra temp = game.cobra;
-            do
+
+            try
             {
-                tableGridGameSkane.GetControlFromPosition(game.cobra.point.Y, game.cobra.point.X).BackColor = Color.Black;
-                game.cobra = game.cobra.next;
-            } while (game.cobra != null);
+                do
+                {
+                    tableGridGameSkane.GetControlFromPosition(game.cobra.point.Y, game.cobra.point.X).BackColor = Color.Black;
+                    game.cobra = game.cobra.next;
+                } while (game.cobra != null);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+
 
             game.cobra = temp;
 
