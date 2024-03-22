@@ -35,7 +35,6 @@ namespace SnakeProjectVol2
             tableGridGameSkane = new TableLayoutPanel();
             timer1 = new System.Windows.Forms.Timer(components);
             grpBoxScore = new GroupBox();
-            picBoxYouDied = new PictureBox();
             label1 = new Label();
             picBoxDirectionals = new PictureBox();
             lblScoreValue = new Label();
@@ -44,9 +43,10 @@ namespace SnakeProjectVol2
             lblYes = new Label();
             lblDoYouContinue = new Label();
             loadingProgress = new ProgressBar();
+            picBoxYouDead = new PictureBox();
             grpBoxScore.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picBoxYouDied).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picBoxDirectionals).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBoxYouDead).BeginInit();
             SuspendLayout();
             // 
             // tableGridGameSkane
@@ -150,7 +150,6 @@ namespace SnakeProjectVol2
             // grpBoxScore
             // 
             grpBoxScore.BackColor = Color.Red;
-            grpBoxScore.Controls.Add(picBoxYouDied);
             grpBoxScore.Controls.Add(label1);
             grpBoxScore.Controls.Add(picBoxDirectionals);
             grpBoxScore.Controls.Add(lblScoreValue);
@@ -162,16 +161,6 @@ namespace SnakeProjectVol2
             grpBoxScore.TabIndex = 3;
             grpBoxScore.TabStop = false;
             grpBoxScore.Text = "Resident Cobra 2";
-            // 
-            // picBoxYouDied
-            // 
-            picBoxYouDied.Image = Properties.Resources.you_are_dead_game_over;
-            picBoxYouDied.Location = new Point(-25, 0);
-            picBoxYouDied.Name = "picBoxYouDied";
-            picBoxYouDied.Size = new Size(366, 212);
-            picBoxYouDied.SizeMode = PictureBoxSizeMode.Zoom;
-            picBoxYouDied.TabIndex = 11;
-            picBoxYouDied.TabStop = false;
             // 
             // label1
             // 
@@ -217,7 +206,7 @@ namespace SnakeProjectVol2
             lblNo.BackColor = Color.Black;
             lblNo.Font = new Font("Bodoni MT", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
             lblNo.ForeColor = Color.White;
-            lblNo.Location = new Point(674, 333);
+            lblNo.Location = new Point(676, 397);
             lblNo.Name = "lblNo";
             lblNo.Size = new Size(44, 32);
             lblNo.TabIndex = 9;
@@ -231,7 +220,7 @@ namespace SnakeProjectVol2
             lblYes.BackColor = Color.Black;
             lblYes.Font = new Font("Bodoni MT", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
             lblYes.ForeColor = Color.White;
-            lblYes.Location = new Point(463, 333);
+            lblYes.Location = new Point(465, 397);
             lblYes.Name = "lblYes";
             lblYes.Size = new Size(53, 32);
             lblYes.TabIndex = 8;
@@ -245,7 +234,7 @@ namespace SnakeProjectVol2
             lblDoYouContinue.BackColor = Color.Black;
             lblDoYouContinue.Font = new Font("Bodoni MT", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
             lblDoYouContinue.ForeColor = Color.White;
-            lblDoYouContinue.Location = new Point(445, 261);
+            lblDoYouContinue.Location = new Point(447, 325);
             lblDoYouContinue.Name = "lblDoYouContinue";
             lblDoYouContinue.Size = new Size(336, 32);
             lblDoYouContinue.TabIndex = 7;
@@ -259,12 +248,23 @@ namespace SnakeProjectVol2
             loadingProgress.Size = new Size(771, 23);
             loadingProgress.TabIndex = 10;
             // 
+            // picBoxYouDead
+            // 
+            picBoxYouDead.Image = Properties.Resources.you_are_dead_game_over;
+            picBoxYouDead.Location = new Point(426, 12);
+            picBoxYouDead.Name = "picBoxYouDead";
+            picBoxYouDead.Size = new Size(357, 288);
+            picBoxYouDead.SizeMode = PictureBoxSizeMode.StretchImage;
+            picBoxYouDead.TabIndex = 12;
+            picBoxYouDead.TabStop = false;
+            // 
             // SnakeProjectVol2Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(795, 441);
+            Controls.Add(picBoxYouDead);
             Controls.Add(loadingProgress);
             Controls.Add(lblNo);
             Controls.Add(lblYes);
@@ -277,8 +277,8 @@ namespace SnakeProjectVol2
             KeyDown += Form1_KeyDown;
             grpBoxScore.ResumeLayout(false);
             grpBoxScore.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picBoxYouDied).EndInit();
             ((System.ComponentModel.ISupportInitialize)picBoxDirectionals).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBoxYouDead).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -296,6 +296,6 @@ namespace SnakeProjectVol2
         private Label lblYes;
         private Label lblDoYouContinue;
         private ProgressBar loadingProgress;
-        private PictureBox picBoxYouDied;
+        private PictureBox picBoxYouDead;
     }
 }

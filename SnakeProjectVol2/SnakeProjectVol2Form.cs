@@ -22,7 +22,7 @@ namespace SnakeProjectVol2
             InitializeComponent();
             timer1.Interval = interval;
             this.loadingProgress.Visible = false;
-            this.picBoxYouDied.Visible = false;
+            this.picBoxYouDead.Visible = false;
         }
         public override void startFresh()
         {
@@ -76,7 +76,7 @@ namespace SnakeProjectVol2
                 tableGridGameSkane.GetControlFromPosition(game.cobra.point.Y, game.cobra.point.X).BackgroundImage = (Image)Properties.Resources.explosionIcon;
                 this.timer1.Enabled = false;
                 this.grpBoxScore.Visible = false;
-                this.picBoxYouDied.Visible = true;
+                this.picBoxYouDead.Visible = true;
                 this.lblDoYouContinue.Visible = true;
                 this.lblYes.Visible = true;
                 this.lblNo.Visible = true;
