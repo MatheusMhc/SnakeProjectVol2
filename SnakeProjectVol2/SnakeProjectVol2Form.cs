@@ -1,17 +1,12 @@
 using SnakeGameProject.Business;
-using SnakeGameSpace;
 using SnakeGameSpace.Business;
 using SnakeProjectVol2.Business;
-using SnakeProjectVol2.Properties;
-using System.Drawing;
-using System.Media;
-using System.Resources;
 
 namespace SnakeProjectVol2
 {
     public delegate void Notify();
 
-    public partial class SnakeProjectVol2Form : Test
+    public partial class SnakeProjectVol2Form : FormMethods
     {
         public event Notify loadTableComplete;
 
@@ -28,6 +23,10 @@ namespace SnakeProjectVol2
             timer1.Interval = interval;
             this.loadingProgress.Visible = false;
             this.picBoxYouDied.Visible = false;
+        }
+        public override void startFresh()
+        {
+            this.Close();
         }
 
         public void SnakeProjectVol2_Load(object sender, EventArgs e)
@@ -123,19 +122,12 @@ namespace SnakeProjectVol2
 
         private void lblYes_Click(object sender, EventArgs e)
         {
-            soundPlayer.Dispose();
-            this.loadingProgress.Visible = true;
-            var gameScreen = new SnakeProjectVol2Form(timer1.Interval);
-            gameScreen.loadTableComplete += () => openNewForm(gameScreen);
-            gameScreen.loadPanelOnGrid(this.loadingProgress);
-            gameScreen.Closed += (s, arg) => this.Close();
+            newGame(this.loadingProgress, timer1.Interval);
         }
 
         private void lblNo_Click(object sender, EventArgs e)
         {
-            var menu = new Menu();
-            menu.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

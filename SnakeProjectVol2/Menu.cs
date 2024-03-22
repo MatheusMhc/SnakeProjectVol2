@@ -1,16 +1,10 @@
 ﻿
-using NAudio.Wave;
 using SnakeProjectVol2;
-using SnakeProjectVol2.Business;
-using System.Windows.Forms;
 
 namespace SnakeGameSpace
 {
-    public partial class Menu : Form
+    public partial class Menu : FormMethods
     {
-
-        WaveOut soundPlayer = new WaveOut();
-
         public Menu()
         {
             InitializeComponent();
@@ -21,11 +15,11 @@ namespace SnakeGameSpace
             loadingProgress.Visible = false;
         }
 
-        private void selectSoundGame(string name)
+        public override void startFresh()
         {
-            AudioFileReader sound = new AudioFileReader(name);
-            soundPlayer.Init(sound);
-            soundPlayer.Play();
+            this.Show();
+            enableDisableLabels(true);
+            loadingProgress.Visible = false;
         }
 
         private void lblNewGame_MouseMove(object sender, MouseEventArgs e)
@@ -94,24 +88,6 @@ namespace SnakeGameSpace
             lblHard.ForeColor = Color.White;
         }
 
-        private void newGame(int interval)
-        {
-            selectSoundGame("../../../resources/residentcobra.wav");
-            var gameScreen = new SnakeProjectVol2Form(interval);
-
-            this.loadingProgress.Visible = true;
-            gameScreen.loadTableComplete += () => openNewForm(gameScreen) ;
-            gameScreen.loadPanelOnGrid(this.loadingProgress);
-            gameScreen.Closed += (s, arg) => this.Close();
-
-        }
-        public void openNewForm(SnakeProjectVol2Form gameScreen)
-        {
-            this.Hide();
-            gameScreen.Show();
-
-        }
-
         private void Form2_Shown(object? sender, EventArgs e)
         {
             throw new NotImplementedException();
@@ -120,19 +96,19 @@ namespace SnakeGameSpace
         private void lblHard_Click(object sender, EventArgs e)
         {
             selectSoundGame("../../../resources/option.wav");
-            newGame(50);
+            newGame(this.loadingProgress, 50);
         }
 
         private void lblMedium_Click(object sender, EventArgs e)
         {
             selectSoundGame("../../../resources/option.wav");
-            newGame(150);
+            newGame(this.loadingProgress, 150);
         }
 
         private void lblEasy_Click(object sender, EventArgs e)
         {
             selectSoundGame("../../../resources/option.wav");
-            newGame(250);
+            newGame(this.loadingProgress, 250);
         }
 
         private void lblBack_MouseLeave(object sender, EventArgs e)
@@ -181,7 +157,8 @@ namespace SnakeGameSpace
 
         private void lblExit_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
         }
+
     }
 }
